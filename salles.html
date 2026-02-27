@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nos Salles</title>
+<style>
+body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f8f8f8; }
+header { background: #004080; color: white; padding: 20px; text-align: center; }
+nav { background: #0066cc; display:flex; justify-content:center; flex-wrap:wrap; }
+nav a { color:white; padding: 15px; text-decoration:none; }
+nav a:hover { background:#004080; }
+section { padding: 50px 20px; background:white; margin:20px auto; max-width:1000px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1); }
+h1,h2,h3 { color:#004080; }
+footer { background:#004080; color:white; text-align:center; padding:20px; }
+.salles { display:grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+@media(max-width:600px){ nav { flex-direction:column; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Nos Salles</h1>
+</header>
+<nav>
+  <a href="index.html">Accueil</a>
+  <a href="salles.html">Nos Salles</a>
+  <a href="reservation.html">Réservation</a>
+  <a href="tarifs.html">Tarifs</a>
+  <a href="contact.html">Contact</a>
+</nav>
+<section class="salles">
+  <div>
+    <h3>Salle Alpha</h3>
+    <p>Capacité: 50 personnes</p>
+    <p>Équipements: Vidéo-projecteur, Wifi, Sonorisation</p>
+  </div>
+  <div>
+    <h3>Salle Beta</h3>
+    <p>Capacité: 30 personnes</p>
+    <p>Équipements: Tableau interactif, Wifi</p>
+  </div>
+  <div>
+    <h3>Salle Gamma</h3>
+    <p>Capacité: 100 personnes</p>
+    <p>Équipements: Vidéo-projecteur HD, Sonorisation complète, Microphone</p>
+  </div>
+</section>
+<footer>
+  <p>&copy; 2026 Salle de Conférence Pro | Tous droits réservés</p>
+</footer>
+</body>
+</html>

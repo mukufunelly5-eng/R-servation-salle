@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Réservation</title>
+<style>
+body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f8f8f8; }
+header { background: #004080; color: white; padding: 20px; text-align: center; }
+nav { background: #0066cc; display:flex; justify-content:center; flex-wrap:wrap; }
+nav a { color:white; padding: 15px; text-decoration:none; }
+nav a:hover { background:#004080; }
+section { padding: 50px 20px; background:white; margin:20px auto; max-width:500px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1); }
+h1,h2 { color:#004080; }
+form { display:flex; flex-direction:column; }
+form input, form select, form textarea { padding:10px; margin:5px 0; border:1px solid #ccc; border-radius:5px; }
+form button { background:#0066cc; color:white; border:none; padding:15px; cursor:pointer; border-radius:5px; }
+form button:hover { background:#004080; }
+footer { background:#004080; color:white; text-align:center; padding:20px; }
+@media(max-width:600px){ nav { flex-direction:column; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Réservation</h1>
+</header>
+<nav>
+  <a href="index.html">Accueil</a>
+  <a href="salles.html">Nos Salles</a>
+  <a href="reservation.html">Réservation</a>
+  <a href="tarifs.html">Tarifs</a>
+  <a href="contact.html">Contact</a>
+</nav>
+<section>
+  <h2>Réservez votre salle</h2>
+  <form id="reservationForm">
+    <input type="text" placeholder="Nom complet" required>
+    <input type="email" placeholder="Email" required>
+    <select required>
+      <option value="Alpha">Salle Alpha</option>
+      <option value="Beta">Salle Beta</option>
+      <option value="Gamma">Salle Gamma</option>
+    </select>
+    <input type="date" required>
+    <input type="number" placeholder="Nombre de participants" min="1" max="200" required>
+    <button type="submit">Réserver</button>
+  </form>
+  <p id="confirmation" style="color:green; text-align:center;"></p>
+</section>
+<script>
+document.getElementById("reservationForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    const nom = this.querySelector("input[type=text]").value;
+    const salle = this.querySelector("select").value;
+    const date = this.querySelector("input[type=date]").value;
+    document.getElementById("confirmation").textContent = `Merci ${nom}, votre réservation pour la ${salle} le ${date} a été enregistrée !`;
+    this.reset();
+});
+</script>
+<footer>
+  <p>&copy; 2026 Salle de Conférence Pro | Tous droits réservés</p>
+</footer>
+</body>
+</html>
